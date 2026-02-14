@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Love Soft Life | Conscious Stillness
 
-This contains everything you need to run your app locally.
+> "Find your soft landing."
 
-View your app in AI Studio: https://ai.studio/apps/drive/1--nsmX4IXv3i9c63UwP1JIqntQg_hjFj
+Love Soft Life is a premium wellness e-commerce destination designed to reframe rest as a radical act of self-care. This project transforms the "Soft Life" concept into a tangible, luxurious digital experience.
 
-## Run Locally
+## ✨ Features
 
-**Prerequisites:**  Node.js
+- **The Soft Life Guide**: An integrated AI assistant powered by **Google Gemini**, providing nurturing advice on rituals, sleep, and intentional living.
+- **Breathing Ritual**: An interactive, guided mindfulness animation built directly into the UI to help users "Pause the World."
+- **Artisan Collection**: A curated catalog of wellness products including silk sanctuary masks, weighted linen throws, and ritual tools.
+- **Digital Sanctuary Design**: A minimalist, high-end UI built with Tailwind CSS, utilizing a "Cashmere and Cloud" color palette.
 
+## 🛠️ Technical Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Frontend**: React 19 (ES6+ Modules)
+- **Styling**: Tailwind CSS
+- **AI Integration**: Google Generative AI (@google/genai)
+- **Icons**: Lucide React
+- **Type Safety**: TypeScript
+
+## 🚀 Getting Started
+
+1. **Prerequisites**: Ensure you have a valid Gemini API Key from [Google AI Studio](https://aistudio.google.com/).
+2. **Environment Variables**: The app expects `process.env.API_KEY` to be available in the execution environment.
+3. **Running the App**:
+   - Open `index.html` in a modern browser.
+   - The app uses ES modules and an import map for a zero-build-step development experience.
+
+## 🌿 Brand Pillars
+
+1. **Permission to Pause**: Fighting hustle culture with intentional rest.
+2. **Rest as a Ritual**: Transforming relaxation into tangible daily acts.
+3. **Soft Strength**: Redefining resilience through calm and clarity.
+
+---
+*Created with intention for lovesoftlife.com*

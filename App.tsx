@@ -7,7 +7,7 @@ import { CartDrawer } from './components/CartDrawer';
 import { AIAssistant } from './components/AIAssistant';
 import { PRODUCTS, CATEGORIES, CAROUSEL_IMAGES } from './constants';
 import { Product, CartItem, View } from './types';
-import { ArrowRight, Star, Heart, Wind, Moon, Sun, X, Play } from 'lucide-react';
+import { ArrowRight, Star, Heart, Wind, Moon, Sun, X, Play, Github, Instagram, Share2 } from 'lucide-react';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -321,6 +321,11 @@ const App: React.FC = () => {
               <p className="text-sm text-gray-400 leading-loose">
                 An artful curation of conscious stillness. We equip you with rituals for the intentional life you deserve.
               </p>
+              <div className="flex space-x-6 pt-4">
+                <a href="#" className="text-softdark/50 hover:text-sage transition-colors"><Instagram size={20} /></a>
+                <a href="https://github.com/lovesoftlife" className="text-softdark/50 hover:text-sage transition-colors"><Github size={20} /></a>
+                <a href="#" className="text-softdark/50 hover:text-sage transition-colors"><Share2 size={20} /></a>
+              </div>
             </div>
             <div className="space-y-8">
               <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] text-sage">Sanctuary Care</h4>
