@@ -5,9 +5,9 @@ import { AnnouncementBar } from './components/AnnouncementBar';
 import { ProductCard } from './components/ProductCard';
 import { CartDrawer } from './components/CartDrawer';
 import { AIAssistant } from './components/AIAssistant';
-import { PRODUCTS, CATEGORIES } from './constants';
+import { PRODUCTS, CATEGORIES, CAROUSEL_IMAGES } from './constants';
 import { Product, CartItem, View } from './types';
-import { ArrowRight, Star, Heart, Wind, Moon, Sun, X } from 'lucide-react';
+import { ArrowRight, Star, Heart, Wind, Moon, Sun, X, Play } from 'lucide-react';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -63,7 +63,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-cashmere/30 selection:text-softdark">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-cashmere/30 selection:text-softdark overflow-x-hidden">
       <AnnouncementBar />
       <Header 
         cartCount={cartItems.length} 
@@ -111,16 +111,69 @@ const App: React.FC = () => {
                     Rest is not a luxury. It is a radical, necessary act of self-care. Discover rituals to reclaim your peace.
                   </p>
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <button className="bg-softdark text-white px-10 py-5 text-[11px] uppercase tracking-[0.25em] font-bold hover:bg-sage transition-all transform hover:-translate-y-1 shadow-xl">
+                    <button className="bg-softdark text-white px-10 py-5 text-[11px] uppercase tracking-[0.25em] font-bold hover:bg-sage transition-all transform hover:-translate-y-1 shadow-xl rounded-full">
                       Shop The Collection
                     </button>
-                    <button onClick={() => setIsBreathing(true)} className="bg-white text-softdark px-10 py-5 text-[11px] uppercase tracking-[0.25em] font-bold hover:bg-cloud border border-cashmere transition-all flex items-center justify-center space-x-2">
+                    <button onClick={() => setIsBreathing(true)} className="bg-white text-softdark px-10 py-5 text-[11px] uppercase tracking-[0.25em] font-bold hover:bg-cloud border border-cashmere transition-all flex items-center justify-center space-x-2 rounded-full">
                       <Wind size={16} />
                       <span>Take a Breath</span>
                     </button>
                   </div>
                 </div>
               </div>
+            </section>
+
+            {/* Animated Infinite Carousel */}
+            <section className="py-12 bg-white overflow-hidden">
+               <div className="container mx-auto px-4 mb-8 text-center">
+                  <h3 className="text-[10px] uppercase tracking-[0.4em] text-sage font-bold">A Visual Journey</h3>
+               </div>
+               <div className="relative overflow-hidden group">
+                 <div className="carousel-container animate-scroll flex space-x-6 hover:[animation-play-state:paused]">
+                    {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((img, idx) => (
+                      <div key={idx} className="w-[300px] md:w-[450px] aspect-[16/10] rounded-2xl overflow-hidden shadow-sm border border-cashmere/10 flex-shrink-0">
+                        <img src={img} className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105" alt="Soft life moment" />
+                      </div>
+                    ))}
+                 </div>
+                 <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+                 <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+               </div>
+            </section>
+
+            {/* Video Feature Section */}
+            <section className="py-24 bg-cloud">
+               <div className="container mx-auto px-4">
+                  <div className="max-w-5xl mx-auto rounded-[3rem] overflow-hidden shadow-2xl relative aspect-video group cursor-pointer">
+                    <video 
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline 
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-meditating-by-the-ocean-at-sunset-1033-large.mp4" type="video/mp4" />
+                    </video>
+                    <div className="absolute inset-0 bg-softdark/20 group-hover:bg-softdark/10 transition-colors flex items-center justify-center">
+                       <div className="w-20 h-20 rounded-full border border-white/40 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                          <Play fill="white" className="text-white ml-1" />
+                       </div>
+                    </div>
+                  </div>
+                  <div className="mt-16 max-w-2xl mx-auto text-center">
+                    <h2 className="font-serif text-3xl md:text-5xl text-softdark mb-6 italic leading-snug">
+                      The Science of Softness.
+                    </h2>
+                    <p className="text-gray-500 text-lg leading-loose italic">
+                      "A calm mind is a strong mind. We believe that by creating pockets of stillness throughout your day, you build the resilience needed to navigate a noisy world with grace."
+                    </p>
+                    <div className="mt-8 flex justify-center space-x-2">
+                       <span className="h-1 w-1 rounded-full bg-cashmere" />
+                       <span className="h-1 w-8 rounded-full bg-cashmere" />
+                       <span className="h-1 w-1 rounded-full bg-cashmere" />
+                    </div>
+                  </div>
+               </div>
             </section>
 
             {/* Brand Essence Section */}

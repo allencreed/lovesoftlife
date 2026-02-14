@@ -21,6 +21,20 @@
             fontFamily: {
               sans: ['Karla', 'sans-serif'],
               serif: ['Lora', 'serif'],
+            },
+            animation: {
+              'scroll': 'scroll 40s linear infinite',
+              'breathe': 'breathe 8s ease-in-out infinite',
+            },
+            keyframes: {
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              breathe: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '0.5' },
+                '50%': { transform: 'scale(1.4)', opacity: '1' },
+              }
             }
           }
         }
@@ -38,12 +52,9 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
-      @keyframes breathe {
-        0%, 100% { transform: scale(1); opacity: 0.5; }
-        50% { transform: scale(1.5); opacity: 1; }
-      }
-      .animate-breathe {
-        animation: breathe 8s ease-in-out infinite;
+      .carousel-container {
+        display: flex;
+        width: max-content;
       }
     </style>
   <script type="importmap">
